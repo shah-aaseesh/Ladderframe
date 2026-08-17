@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>LadderFrame Advisors LLP | Vestox Webflow Interactive Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+  <!-- Webflow Vestox Official Stylesheets -->
+  <link href="https://assets.website-files.com/6391f853d48f24401d03ff53/css/vestox.webflow.86a9daf8a.min.css" rel="stylesheet" type="text/css"/>
+  <link href="styles.css" rel="stylesheet" type="text/css"/>
+
+  <style>
+    .w-webflow-badge { display: none !important; }
+    * {
+      outline: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f6f6f6; } 
+    ::-webkit-scrollbar-thumb { 
+      background: #F75708;
+      border-radius: 10px;
+    }
+    
+    [data-anim-btn]:hover .overflow-anim { transform: translateY(-50%); }
+    [data-anim-btn]:hover .arrow-bg { transform: scale(1); opacity: 1; }
+    
+    .anim-text.mod--first {
+      animation: animtext1 14s linear infinite 0s;
+    }
+    .anim-text.mod--second {
+      animation: animtext2 14s linear infinite 0s;
+    }
+    @keyframes animtext1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes animtext2 {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .top-switch-bar {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .top-switch-bar a {
+      color: #f59e0b;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE NAVIGATION SWITCH BAR -->
+  <div class="top-switch-bar">
+    <span>📍 Viewing <strong>LadderFrame Advisors LLP Executive Showcase</strong></span>
+    <div style="display: inline-flex; gap: 1rem;">
+      <a href="index.html">← Return to Main Site (LadderFrame)</a>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <div class="section mod--header">
+        <div class="content overflow-hidden">
+          <div class="columns mod--header" style="transform: translate3d(0, 0, 0);">
+            <div class="col col--1 mod--header">
+              <a href="index.html" class="logo-link w-inline-block" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 32px;">
+                  <rect x="4" y="6" width="6" height="26" rx="2" fill="#0F172A" />
+                  <rect x="22" y="6" width="6" height="26" rx="2" fill="#0F172A" />
+                  <path d="M7 12H25" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M7 19H25" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M7 26H25" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+                  <text x="36" y="22" font-family="Outfit, sans-serif" font-weight="800" font-size="18" fill="#0F172A">LadderFrame</text>
+                </svg>
+              </a>
+            </div>
+            <div class="col col--2 mod--header">
+              <div class="nav">
+                <a data-anim-btn href="index.html" class="nav-ink w-inline-block">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">LadderFrame</div><div class="text mod--absolute">LadderFrame</div></div></div>
+                </a>
+                <a data-anim-btn href="vestox.html" class="nav-ink w-inline-block" style="color: var(--accent-gold); font-weight: 700;">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Vestox</div><div class="text mod--absolute">Vestox</div></div></div>
+                </a>
+                <a data-anim-btn href="tresmares.html" class="nav-ink w-inline-block">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Tresmares Capital</div><div class="text mod--absolute">Tresmares Capital</div></div></div>
+                </a>
+              </div>
+            </div>
+            <div class="col col--3 mod--header">
+              <a data-anim-btn href="index.html" class="nav-ink text-weight-bold w-inline-block">
+                <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Main Site</div><div class="text mod--absolute">Main Site</div></div></div>
+              </a>
+              <a data-anim-btn href="#" class="nav-ink mod--register w-inline-block" data-open-drawer>
+                <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Start Conversation</div><div class="text mod--absolute">Start Conversation</div></div></div>
+                <div class="btn-shape"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      
+      <!-- HERO SECTION -->
+      <section class="section mod--hero">
+        <div class="content overflow-hidden">
+          <div class="columns mod--hero mod--1">
+            <div class="col col--1 mod--hero">
+              <div class="text-wrap mod--hero-heading">
+                <div class="overflow-hidden">
+                  <h1 class="heading-xlarge mod--hero" style="transform: translate3d(0,0,0);">
+                    Where Ambiti<span class="heading-span mod--line">o</span>n Meets
+                  </h1>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="heading-xlarge mod--hero" style="transform: translate3d(0,0,0);">ARCHITECTURE</div>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="heading-xlarge mod--hero" style="transform: translate3d(0,0,0);">
+                    <span class="text-style-italic">We Build <em class="heading-span mod--dot">Frame</em></span>
+                  </div>
+                </div>
+                <div class="text-wrap mod--hero-subheading">
+                  <div class="overflow-hidden"><div class="subheading mod--hero" style="transform: translate3d(0,0,0);">So You Can Climb Higher,</div></div>
+                  <div class="overflow-hidden"><div class="subheading mod--hero" style="transform: translate3d(0,0,0);">Predictably & Sustainably.</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div data-anim-card class="col col--2 mod--hero">
+              <div class="hero__counter" style="opacity: 1; transform: scale(1);">
+                <div class="text-weight-light text-size-regular" style="opacity: 1;">Cognizant India Scale</div>
+                <div class="overflow-hidden">
+                  <div class="numbers" style="transform: translate3d(0,0,0);">
+                    <div class="overflow-hidden"><div class="overflow-anim mod--counter"><div class="text">1</div><div class="text mod--absolute">6</div></div></div>
+                    <div class="overflow-hidden"><div class="overflow-anim mod--counter"><div class="text">0</div></div></div>
+                    <div>M+</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="transform: translate3d(0,0,0);">
+                <div data-anim-elements data-anim-btn class="card card-white">
+                  <div class="overflow-hidden mod--hero-compos">
+                    <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/63923e27660f51a82618af9a_hero-compos-line-01.svg" width="512" alt="" class="img mod--hero-compos"/>
+                    <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/63923e27c0634948286d1f62_hero-compos-line-02.svg" width="512" alt="" class="img mod--hero-compos mod--2 active"/>
+                  </div>
+                  <div class="text-wrap mod--hero-by">
+                    <div>
+                      <div class="overflow-hidden"><div class="overflow-anim"><div class="text">LED</div></div></div>
+                      <div class="overflow-hidden"><div class="overflow-anim"><div class="text">BY</div></div></div>
+                    </div>
+                    <div class="img-wrap mod--hero-by active">
+                      <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24cbd703ff6f_B-icon.svg" alt="" class="img mod--hero-by mod--1 active"/>
+                      <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24c09703ff7e_a-icon.svg" alt="" class="img mod--hero-by mod--2 active"/>
+                    </div>
+                  </div>
+                  <div class="comp-circle"></div>
+                  <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24b4b103ff70_hero_star-svg.svg" alt="" class="comp-star active"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HERO LOWER CARDS -->
+          <div class="columns mod--hero mod--2" style="transform: translate3d(0,0,0); margin-top: 2rem;">
+            <!-- Card 1: Orange Video Metric Card -->
+            <div data-anim-card class="col col--1 mod--hero">
+              <div data-anim-btn class="card card-orange">
+                <div class="video-wrap">
+                  <div class="card-video w-background-video w-background-video-atom">
+                    <video autoplay loop muted playsinline poster="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24ea6303ff9d_video-1-poster-00001.jpg">
+                      <source src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24ea6303ff9d_video-1-transcode.mp4" type="video/mp4"/>
+                    </video>
+                  </div>
+                  <div class="video-grad"></div>
+                </div>
+                <div class="text-wrap mod--card">
+                  <div class="text mod--card-number">$2B+</div>
+                  <div class="text-wrap mod--card-number-desc">
+                    <div class="text mod--card-number-desc">Customer Lifetime <br/>Value Delivered</div>
+                    <div class="text-font-proximanova text-weight-bold text-size-medium">+3.8%</div>
+                  </div>
+                </div>
+                <a href="#anurag" class="btn-arrow mod--card w-inline-block">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">ANURAG VERULKAR PROFILE</div><div class="text mod--absolute">ANURAG VERULKAR PROFILE</div></div></div>
+                  <div class="img-wrap mod--arrow">
+                    <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24561903ff76_arrow-right.svg" alt="" class="img mod--arrow"/>
+                    <div class="arrow-bg"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2: Brown Fractional CxO Card -->
+            <div data-anim-card class="col col--2 mod--hero">
+              <div class="card card-brown">
+                <div class="heading-medium">Your Growth <br/>Orchestrator for <span class="heading-span mod--vawe">SMB Scale</span></div>
+                <div class="columns mod--ava" style="margin-top: 2rem;">
+                  <div class="col col--1 mod--ava" style="display: flex;">
+                    <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/639329e6307dbd57d8e20d0c_ava-03.webp" alt="Anurag Verulkar" class="img mod--ava mod--1" style="width: 44px; height: 44px; border-radius: 50%;"/>
+                    <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/639329e6d202616de0290a3b_ava-02.webp" alt="Partner 2" class="img mod--ava mod--2" style="width: 44px; height: 44px; border-radius: 50%; margin-left: -12px;"/>
+                    <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/639329e6bff36d715796abd0_ava-01.webp" alt="Partner 3" class="img mod--ava mod--3" style="width: 44px; height: 44px; border-radius: 50%; margin-left: -12px;"/>
+                  </div>
+                  <div class="col col--2 mod--ava">
+                    <div>
+                      <div class="overflow-hidden"><div class="overflow-anim"><div class="text">FRACTIONAL</div><div class="text mod--absolute">FRACTIONAL</div></div></div>
+                      <div class="overflow-hidden"><div class="overflow-anim"><div class="text">CxO</div><div class="text mod--absolute">CxO</div></div></div>
+                      <div class="overflow-hidden"><div class="overflow-anim"><div class="text">PLATFORM</div><div class="text mod--absolute">PLATFORM</div></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION WITH MARQUEE STORYLINE -->
+      <section class="section mod--about">
+        <div class="content">
+          <div class="columns mod--about">
+            <div class="col col--1 mod--about">
+              <div data-anim-btn class="card card-black">
+                <div class="img-wrap mod--about-man">
+                  <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/63938c9cec7d517b96284351_man-bg.webp" alt="" class="img mod--about-man"/>
+                </div>
+                <div class="overflow-hidden mod--about-arrow">
+                  <a href="index.html" class="btn-arrow w-inline-block">
+                    <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Start Conversation</div><div class="text mod--absolute">Start Conversation</div></div></div>
+                    <div class="img-wrap mod--arrow"><img src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24561903ff76_arrow-right.svg" alt="" class="img mod--arrow"/><div class="arrow-bg"></div></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col--2 mod--about">
+              <div class="overflow-hidden">
+                <div style="font-size: 1.5rem; line-height: 1.4; color: #191919; font-weight: 600;">
+                  A ladder without a frame collapses. A frame without a ladder goes nowhere. LadderFrame brings both — and the ecosystem to make it real.
+                </div>
+              </div>
+              <div class="overflow-hidden" style="margin-top: 2rem;">
+                <a data-anim-btn href="#anurag" class="btn-arrow w-inline-block">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Learn Our Story</div><div class="text mod--absolute">Learn Our Story</div></div></div>
+                  <div class="img-wrap mod--arrow"><img src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24561903ff76_arrow-right.svg" alt="" class="img mod--arrow"/><div class="arrow-bg"></div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BULL GRAPHIC CARD WITH MARQUEE -->
+          <div class="about__card-wrap" style="margin-top: 3rem;">
+            <div class="card mod--about">
+              <div class="about__chart">
+                <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/63984e3a24911a43eb5d40ce_chart-elem-01.svg" alt="" class="about__chart-elem"/>
+                <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/63984e3a3f168b4b302e35ef_chart-elem-02.svg" alt="" class="about__chart-elem mod--2"/>
+              </div>
+              <div class="img-wrap mod--about-bull" style="text-align: center;">
+                <img src="https://assets.website-files.com/6391f853d48f24401d03ff53/63938743a14042570a9725f8_bull.webp" alt="LadderFrame Bull" class="img mod--about-bull" style="max-width: 480px; margin: 0 auto;"/>
+                <div class="anim-text-wrap" style="margin-top: 1rem; overflow: hidden; white-space: nowrap;">
+                  <div class="anim-text mod--first" style="display: inline-block; font-weight: 700; color: #191919;">
+                    LadderFrame Advisors LLP — Strategic Growth Advisory, Sales Org Enablement, AI Advantage, Expansion & M&A Support. We build the frame so you can climb.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- REAL CLIENT CASE IMPACT SECTION -->
+      <section class="section mod--invest" id="impact" style="padding: 6rem 0;">
+        <div class="content mod--investment container">
+          <div class="text-wrap mod--invest">
+            <h2 class="heading-xlarge">Client Impact & <em class="text-style-italic mod--invest-future">Case Studies</em></h2>
+            <div class="subheading" style="font-size: 1.5rem; color: #f75708; margin-top: 1rem;">Pharma Forward Integration & ₹100Cr IT Services Scale</div>
+            <p class="heading-medium" style="margin-top: 1.5rem; max-width: 760px; color: #64748b;">
+              <strong>Pharma Distribution Case:</strong> Closed ₹1.5Cr deal in 5 weeks via forward retail acquisition.<br>
+              <strong>₹100Cr IT Services Transformation:</strong> Installed CRO & Account Director tiers, joint partner GTM playbooks, and verticalized AI service delivery.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STACKED 3-TAB SECTION (3 GROWTH PILLARS) -->
+      <section class="section mod--tabs" id="pillars" style="padding: 6rem 0; background: #f8fafc;">
+        <div class="content mod--tabs container">
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+            
+            <!-- Pillar 1 -->
+            <div class="card" style="background: #ffffff; border-radius: 20px; padding: 3rem; border: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+              <div>
+                <h3 class="heading-medium mod--tabs">Pillar 01: Core Advisory <span class="heading-span mod--vawe">Engine</span></h3>
+                <p class="text mod--tabs-desc" style="margin: 1.5rem 0; color: #64748b;">
+                  Designing operating frameworks, improving margins (+3.8% lift), and building execution rhythms for predictable scale across SMBs & Tech businesses.
+                </p>
+                <a href="index.html" class="btn-arrow mod--tabs w-inline-block">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Explore Core Advisory</div><div class="text mod--absolute">Explore Core Advisory</div></div></div>
+                </a>
+              </div>
+              <div>
+                <video autoplay loop muted playsinline style="border-radius: 16px; width: 100%; height: 260px; object-fit: cover;">
+                  <source src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f244a2d03ff9e_video-3-transcode.mp4" type="video/mp4"/>
+                </video>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="card" style="background: #27211d; color: #ffffff; border-radius: 20px; padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+              <div>
+                <h3 class="heading-medium mod--tabs" style="color: #ffffff;">Pillar 02: Fractional CxO <span class="heading-span mod--vawe" style="color: #f75708;">Platform</span></h3>
+                <p class="text mod--tabs-desc" style="margin: 1.5rem 0; color: #cbd5e1;">
+                  Stepping in with seasoned C-level leadership (CRO, CMO, CTO) without full-time executive overhead — bringing top-tier depth to scaling teams.
+                </p>
+                <a href="index.html" class="btn-arrow mod--tabs w-inline-block" style="color: #ffffff;">
+                  <div class="overflow-hidden"><div class="overflow-anim"><div class="text">Activate Fractional CxO</div><div class="text mod--absolute">Activate Fractional CxO</div></div></div>
+                </a>
+              </div>
+              <div>
+                <video autoplay loop muted playsinline style="border-radius: 16px; width: 100%; height: 260px; object-fit: cover;">
+                  <source src="https://assets.website-files.com/6391f853d48f24401d03ff53/6391f853d48f24ad5803ff9b_2-transcode.mp4" type="video/mp4"/>
+                </video>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="background: #191919; color: #ffffff; padding: 5rem 0 2rem;">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 3rem; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 32px;">
+              <rect x="4" y="6" width="6" height="26" rx="2" fill="#FFFFFF" />
+              <rect x="22" y="6" width="6" height="26" rx="2" fill="#FFFFFF" />
+              <path d="M7 12H25" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+              <path d="M7 19H25" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+              <path d="M7 26H25" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+              <text x="36" y="22" font-family="Outfit, sans-serif" font-weight="800" font-size="18" fill="#FFFFFF">LadderFrame</text>
+            </svg>
+          </div>
+          <div style="display: flex; gap: 2rem; font-weight: 600;">
+            <a href="mailto:connect@ladderframe.in">connect@ladderframe.in</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+        <div style="text-align: center; color: #888; font-size: 0.85rem;">
+          Mumbai • Copyright © 2026 LadderFrame Advisors LLP. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

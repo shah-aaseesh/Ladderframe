@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T00:04:52Z",
+  "title": "Design System: LadderFrame Growth Architects",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Deep Midnight Navy",
+        "canonical": "#121417"
+      },
+      "accent-gold": {
+        "role": "secondary",
+        "displayName": "Deep Regal Maroon",
+        "canonical": "#800020"
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Porcelain White",
+        "canonical": "#ffffff"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Cormorant Garamond Display",
+        "purpose": "Executive main headlines and display numbers."
+      },
+      "body": {
+        "displayName": "Plus Jakarta Sans Body",
+        "purpose": "Readable body prose and micro UI."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ambient-low",
+        "value": "0 12px 36px rgba(18, 20, 23, 0.05)",
+        "purpose": "Soft porcelain card elevation."
+      },
+      {
+        "name": "gold-glow",
+        "value": "0 8px 24px rgba(154, 107, 50, 0.3)",
+        "purpose": "Interactive hover state elevation."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Executive Gold Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Primary call-to-action button for executive conversions.",
+      "html": "<button class=\"ds-btn-gold\">Get in Touch →</button>",
+      "css": ".ds-btn-gold { background: #9a6b32; color: #ffffff; padding: 0.75rem 1.85rem; border-radius: 9999px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(154, 107, 50, 0.25); } .ds-btn-gold:hover { background: #7e5627; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(154, 107, 50, 0.4); }"
+    },
+    {
+      "name": "Porcelain Card",
+      "kind": "card",
+      "refersTo": "card-porcelain",
+      "description": "Porcelain surface card for executive case studies & practice areas.",
+      "html": "<div class=\"ds-card-porcelain\"><h3>Strategic Growth</h3><p>Predictable sales pipeline and unit economics audit.</p></div>",
+      "css": ".ds-card-porcelain { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; box-shadow: 0 12px 36px rgba(18, 20, 23, 0.05); transition: all 0.3s ease; } .ds-card-porcelain:hover { border-color: rgba(154, 107, 50, 0.35); transform: translateY(-5px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Executive Architectural Sanctuary",
+    "overview": "LadderFrame presents an authoritative, high-taste editorial design system crafted for B2B Enterprise Founders and C-level executives.",
+    "keyCharacteristics": [
+      "Dual-font pairing: Cormorant Garamond serif display headers paired with Plus Jakarta Sans body type.",
+      "Porcelain White (#ffffff) card surfaces with hairline borders and ambient drop shadows.",
+      "Sparse Antique Gold (#9a6b32) accents for high-contrast visual authority."
+    ],
+    "rules": [
+      {
+        "name": "The Rarity Rule",
+        "body": "The Antique Gold accent is used sparingly on ≤10% of any screen viewport.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do maintain strict font separation: Cormorant Garamond for titles & numbers; Plus Jakarta Sans for body prose.",
+      "Do preserve 2-column staggered layout physics for bottleneck marquee cards."
+    ],
+    "donts": [
+      "Don't use bright neon colors or generic blue accents.",
+      "Don't clutter section headers with unneeded extra card boxes."
+    ]
+  }
+}

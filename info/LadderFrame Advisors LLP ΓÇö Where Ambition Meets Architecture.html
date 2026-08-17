@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LadderFrame Advisors LLP — Where Ambition Meets Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E0F0C;
+    --gold: #B8975A;
+    --gold-light: #D4B483;
+    --cream: #F5F0E8;
+    --warm-white: #FAF8F4;
+    --charcoal: #2A2A27;
+    --mid: #6B6B67;
+    --border: rgba(184,151,90,0.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 5vw;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .nav-cta:hover { background: var(--gold); color: var(--warm-white); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-texture {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(184,151,90,0.06) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(184,151,90,0.04) 0%, transparent 50%);
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(184,151,90,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,151,90,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 10rem 5vw 6rem 10vw;
+    position: relative; z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 40px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: rgba(245,240,232,0.55);
+    max-width: 420px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1.2rem; align-items: center;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 2.2rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-ghost {
+    padding: 0.85rem 2.2rem;
+    border: 1px solid rgba(245,240,232,0.2);
+    color: rgba(245,240,232,0.7);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 8rem 8vw 6rem 2rem;
+  }
+
+  .hero-card {
+    border: 1px solid rgba(184,151,90,0.25);
+    padding: 3rem;
+    max-width: 380px;
+    background: rgba(255,255,255,0.03);
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    color: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    top: -1.5rem; left: 1.5rem;
+    line-height: 1;
+  }
+
+  .hero-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-card cite {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 3rem; left: 10vw;
+    display: flex; align-items: center; gap: 1rem;
+    color: rgba(245,240,232,0.35);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(184,151,90,0.5));
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  section { padding: 8rem 10vw; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .section-label::before {
+    content: ''; width: 30px; height: 1px; background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  /* ─── CHALLENGE ─── */
+  #challenge {
+    background: var(--cream);
+  }
+
+  .challenge-intro {
+    max-width: 700px;
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 5rem;
+  }
+
+  .challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .challenge-item {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .challenge-item:hover { background: var(--warm-white); }
+
+  .challenge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: rgba(184,151,90,0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .challenge-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .challenge-desc {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-box {
+    border: 1px solid var(--border);
+    padding: 4rem 3rem;
+    position: relative;
+    background: var(--ink);
+  }
+
+  .about-box::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(184,151,90,0.12);
+    pointer-events: none;
+  }
+
+  .about-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .about-def {
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(184,151,90,0.12);
+  }
+
+  .about-def:last-of-type { border: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .about-content p {
+    font-size: 1rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ─── PILLARS ─── */
+  #pillars {
+    background: var(--ink);
+  }
+
+  #pillars .section-label { color: var(--gold); }
+  #pillars .section-title { color: var(--cream); }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(184,151,90,0.12);
+    margin-top: 4rem;
+  }
+
+  .pillar {
+    background: var(--ink);
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .pillar:hover { background: #161614; }
+
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: rgba(184,151,90,0.1);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ─── SERVICES ─── */
+  #services .section-title { margin-bottom: 0.5rem; }
+
+  .services-lead {
+    font-size: 1rem;
+    color: var(--mid);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 4rem;
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    border: 1px solid var(--border);
+    padding: 2.8rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .service-num {
+    position: absolute; top: 2.8rem; right: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(184,151,90,0.1);
+    line-height: 1;
+  }
+
+  .service-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+  }
+
+  .service-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tag {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.7rem;
+    background: var(--cream);
+    color: var(--mid);
+    letter-spacing: 0.05em;
+  }
+
+  .service-outcome {
+    font-size: 0.82rem;
+    color: var(--gold);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  /* ─── PROCESS ─── */
+  #process {
+    background: var(--cream);
+  }
+
+  .process-steps {
+    margin-top: 4.5rem;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    left: 2.5rem;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 3rem;
+    padding-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .process-step:last-child { padding-bottom: 0; }
+
+  .step-marker {
+    display: flex; flex-direction: column; align-items: center;
+    padding-top: 0.25rem;
+  }
+
+  .step-dot {
+    width: 14px; height: 14px;
+    border: 2px solid var(--gold);
+    background: var(--cream);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+    transition: background 0.3s;
+  }
+
+  .process-step:hover .step-dot { background: var(--gold); }
+
+  .step-phase {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 0.8rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .step-content {}
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+  }
+
+  .step-desc {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .process-outcome {
+    margin-top: 4rem;
+    padding: 2.5rem 3rem;
+    border-left: 3px solid var(--gold);
+    background: var(--warm-white);
+  }
+
+  .process-outcome p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--charcoal);
+    line-height: 1.6;
+  }
+
+  /* ─── CASE STUDIES ─── */
+  #cases {
+    background: var(--ink);
+  }
+
+  #cases .section-title { color: var(--cream); }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .case-card {
+    border: 1px solid rgba(184,151,90,0.15);
+    padding: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .case-card:hover { border-color: rgba(184,151,90,0.4); }
+
+  .case-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid rgba(184,151,90,0.3);
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .case-badge.active {
+    background: rgba(184,151,90,0.1);
+    border-color: var(--gold);
+  }
+
+  .case-sector {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.35);
+    margin-bottom: 0.8rem;
+  }
+
+  .case-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 2rem;
+  }
+
+  .case-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(184,151,90,0.12);
+    border-bottom: 1px solid rgba(184,151,90,0.12);
+  }
+
+  .case-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .case-stat-label {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  .case-desc {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .case-columns {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 1.5rem;
+  }
+
+  .case-col-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .case-col-item {
+    font-size: 0.8rem;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ─── ECOSYSTEM ─── */
+  #ecosystem {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .eco-intro {
+    font-size: 1rem;
+    color: var(--mid);
+    max-width: 650px;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 5rem;
+  }
+
+  .eco-center {
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .eco-hub {
+    background: var(--ink);
+    border: 1px solid var(--gold);
+    padding: 2rem 3rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .eco-hub::before, .eco-hub::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 100%;
+    width: 1px; height: 40px;
+    background: var(--border);
+  }
+
+  .eco-hub-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .eco-hub-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    margin-top: 0.4rem;
+  }
+
+  .eco-layout {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .eco-node {
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .eco-node:hover { border-color: var(--gold); }
+
+  .eco-node-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .eco-node-item {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.7;
+    padding-left: 1rem;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .eco-node-item::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  .eco-center-block {
+    display: flex; flex-direction: column; align-items: center; gap: 0;
+  }
+
+  .eco-connector {
+    width: 1px; height: 3rem;
+    background: var(--border);
+  }
+
+  /* ─── TEAM ─── */
+  #team {
+    background: var(--cream);
+  }
+
+  .team-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 4rem;
+  }
+
+  .team-portrait {
+    aspect-ratio: 4/5;
+    background: var(--charcoal);
+    display: flex; align-items: flex-end;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-portrait::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(14,15,12,0.8));
+  }
+
+  .team-initials {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    color: rgba(184,151,90,0.2);
+    line-height: 1;
+  }
+
+  .team-name-overlay {
+    position: relative; z-index: 2;
+  }
+
+  .team-name-overlay .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .team-name-overlay .role {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .team-bio {}
+
+  .team-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .team-stat {
+    background: var(--cream);
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+  }
+
+  .team-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .team-stat-label {
+    font-size: 0.7rem;
+    color: var(--mid);
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  .team-points {}
+
+  .team-point {
+    display: flex; gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .tp-bullet {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .tp-text {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ─── CTA ─── */
+  #cta {
+    background: var(--ink);
+    text-align: center;
+    padding: 10rem 10vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(184,151,90,0.06) 0%, transparent 70%);
+  }
+
+  .cta-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.35;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    position: relative; z-index: 1;
+  }
+
+  .cta-quote em { color: var(--gold); font-style: normal; }
+
+  .cta-tagline {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 0.08em;
+    max-width: 550px;
+    margin: 0 auto 3.5rem;
+    line-height: 1.75;
+    position: relative; z-index: 1;
+  }
+
+  .cta-actions {
+    display: flex; justify-content: center; gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative; z-index: 1;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080908;
+    padding: 3rem 10vw;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(184,151,90,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.2);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.8s ease forwards; }
+  .hero-h1 { animation: fadeUp 0.8s ease 0.1s both; }
+  .hero-sub { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-actions { animation: fadeUp 0.8s ease 0.3s both; }
+  .hero-card { animation: fadeUp 0.8s ease 0.4s both; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 5vw; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 9rem 5vw 5rem; }
+    section { padding: 5rem 5vw; }
+    #about { grid-template-columns: 1fr; gap: 3rem; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .challenge-grid { grid-template-columns: 1fr 1fr; }
+    .eco-layout { grid-template-columns: 1fr; }
+    .team-card { grid-template-columns: 1fr; }
+    .team-stats { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ladder<span>Frame</span></a>
+  <ul class="nav-links">
+    <li><a href="#challenge">The Challenge</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How We Work</a></li>
+    <li><a href="#cases">Impact</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+  <a href="mailto:connect@ladderframe.in" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <p class="hero-eyebrow">Strategic Growth & Scaling Advisory</p>
+    <h1 class="hero-h1">Where Ambition<br>Meets <em>Architecture.</em></h1>
+    <p class="hero-sub">Structured Growth. Sustained Momentum.<br>We help SMBs and technology-driven businesses scale predictably, improve margins, and build lasting value.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Our Work</a>
+      <a href="mailto:connect@ladderframe.in" class="btn-ghost">Connect With Us</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <p>"Growth isn't random. It's engineered."</p>
+      <cite>— LadderFrame Advisors LLP</cite>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section id="challenge">
+  <p class="section-label">The Challenge</p>
+  <h2 class="section-title">Most Businesses Don't Fail<br>From Lack of <em>Ambition.</em></h2>
+  <p class="challenge-intro">They stall because ambition outpaces architecture — and growth is pursued faster than the systems that sustain it.</p>
+
+  <div class="challenge-grid">
+    <div class="challenge-item">
+      <div class="challenge-num">01</div>
+      <div class="challenge-title">Growth Without Structure</div>
+      <p class="challenge-desc">Revenue grows but processes don't. The founder becomes the bottleneck. Every new client adds chaos, not scale.</p>
+    </div>
+    <div class="challenge-item">
+      <div class="challenge-num">02</div>
+      <div class="challenge-title">Margins Under Pressure</div>
+      <p class="challenge-desc">Costs rise faster than revenue. Pricing is intuitive, not strategic. Profitability quietly erodes as the business grows.</p>
+    </div>
+    <div class="challenge-item">
+      <div class="challenge-num">03</div>
+      <div class="challenge-title">Expansion Without a Map</div>
+      <p class="challenge-desc">New markets, segments, service lines — pursued on instinct rather than a validated, de-risked roadmap.</p>
+    </div>
+    <div class="challenge-item">
+      <div class="challenge-num">04</div>
+      <div class="challenge-title">Sales That Can't Scale</div>
+      <p class="challenge-desc">Relationships carry all the revenue. No structure, no pipeline visibility, no repeatability beyond the founder.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual">
+    <div class="about-box">
+      <div class="about-word">Ladder</div>
+      <p class="about-def">Ascent, ambition, structured progress — the drive to climb higher with purpose and direction.</p>
+      <div class="about-word">Frame</div>
+      <p class="about-def">Stability, design, the system that holds the climb steady — the architecture that makes ascent sustainable.</p>
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title">We Build the Frame, So You Can <em>Climb.</em></h2>
+    <p>LadderFrame Advisors LLP is a strategic growth and scaling advisory for SMBs and technology-driven businesses. We partner with founders and leadership teams to translate vision into measurable outcomes — scaling predictably, improving margins, and building sustainable value.</p>
+    <p>We act as your <strong>Growth Orchestrator</strong> — combining deep strategic advisory with a curated ecosystem of specialists, each activated as your engagement demands.</p>
+    <a href="mailto:connect@ladderframe.in" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Start the Conversation</a>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <p class="section-label">Our Framework</p>
+  <h2 class="section-title">Three Pillars of <em>Sustainable Growth.</em></h2>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-tag">Core Advisory Engine</div>
+      <h3 class="pillar-title">Scaling SMBs &amp; Tech Businesses</h3>
+      <p class="pillar-desc">We design operating frameworks, improve margins, and build execution rhythms that support intelligent, predictable scale for growing businesses.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-tag">Leadership Access</div>
+      <h3 class="pillar-title">Fractional CxO Platform</h3>
+      <p class="pillar-desc">We are building a collaborative ecosystem of experienced CxOs who can step in as fractional leaders — bringing top-tier depth without full-time overhead.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-tag">Founder Support</div>
+      <h3 class="pillar-title">Startup Growth Partnership</h3>
+      <p class="pillar-desc">We support early-stage founders beyond advisory — through GTM design, product refinement, partnerships, and fundraising. A long-term relationship, not a one-time project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label">Our Services</p>
+  <h2 class="section-title">Where Growth Meets <em>Structure.</em></h2>
+  <p class="services-lead">Four integrated practice areas, each designed to address a distinct dimension of your growth journey.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">1</div>
+      <h3 class="service-title">Strategic Growth Advisory</h3>
+      <div class="service-tags">
+        <span class="service-tag">Growth Roadmap</span>
+        <span class="service-tag">Market Prioritization</span>
+        <span class="service-tag">Sales Process</span>
+        <span class="service-tag">Pricing & Margins</span>
+        <span class="service-tag">Revenue Analytics</span>
+      </div>
+      <p class="service-outcome">→ Predictable pipeline. Higher lifetime value.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">2</div>
+      <h3 class="service-title">Sales Org Design & Enablement</h3>
+      <div class="service-tags">
+        <span class="service-tag">CRO & Leadership</span>
+        <span class="service-tag">Account Director Framework</span>
+        <span class="service-tag">Inside Sales Setup</span>
+        <span class="service-tag">OKR & Performance</span>
+      </div>
+      <p class="service-outcome">→ A sales engine that scales beyond the founder.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">3</div>
+      <h3 class="service-title">AI Advantage for SMBs</h3>
+      <div class="service-tags">
+        <span class="service-tag">AI Revenue Strategy</span>
+        <span class="service-tag">Use Case Identification</span>
+        <span class="service-tag">Delivery Model Design</span>
+        <span class="service-tag">Workflow Automation</span>
+      </div>
+      <p class="service-outcome">→ AI as a real revenue engine, not just a story.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">4</div>
+      <h3 class="service-title">Expansion & Transformation</h3>
+      <div class="service-tags">
+        <span class="service-tag">Forward Integration</span>
+        <span class="service-tag">Market Entry</span>
+        <span class="service-tag">Partnerships & Alliances</span>
+        <span class="service-tag">M&A Support</span>
+      </div>
+      <p class="service-outcome">→ Controlled, confident entry into new markets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <p class="section-label">How We Work</p>
+  <h2 class="section-title">Growth Architects, <em>Not Consultants.</em></h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-marker">
+        <div class="step-dot"></div>
+        <div class="step-phase">Phase 1</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Diagnose &amp; Align</h3>
+        <p class="step-desc">We immerse deeply in your business — mapping growth levers, revenue dependencies, operational friction, and cultural realities before we recommend anything.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-marker">
+        <div class="step-dot"></div>
+        <div class="step-phase">Phase 2</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Design &amp; Validate</h3>
+        <p class="step-desc">We co-create a growth roadmap grounded in your data, capability, and culture — not generic playbooks. Every initiative is pressure-tested before execution begins.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-marker">
+        <div class="step-dot"></div>
+        <div class="step-phase">Phase 3</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Execute &amp; Enable</h3>
+        <p class="step-desc">We stay with you through execution — aligning systems, people, and tools. We build internal capability so the organisation learns and improves, not just delivers.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-marker">
+        <div class="step-dot"></div>
+        <div class="step-phase">Phase 4</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Scale &amp; Sustain</h3>
+        <p class="step-desc">We embed repeatability, performance monitoring, and governance — so growth becomes self-sustaining, not founder-dependent.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="process-outcome">
+    <p>A self-sustaining growth engine with clear visibility on performance, profitability, and predictability.</p>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <p class="section-label" style="color:var(--gold)">Client Impact</p>
+  <h2 class="section-title">Where We've Made <em>a Difference.</em></h2>
+
+  <div class="cases-grid">
+    <!-- Case 1 -->
+    <div class="case-card">
+      <span class="case-badge">Case Study 01</span>
+      <div class="case-sector">Pharma Distribution · Expansion Strategy & Acquisition Support</div>
+      <h3 class="case-title">Forward Integration for a Leading Pharma Distributor</h3>
+      <div class="case-stats">
+        <div>
+          <div class="case-stat-val">5 Wks</div>
+          <div class="case-stat-label">Identification to acquisition close</div>
+        </div>
+        <div>
+          <div class="case-stat-val">₹1.5Cr</div>
+          <div class="case-stat-label">Deal value negotiated &amp; closed</div>
+        </div>
+      </div>
+      <p class="case-desc">A well-established pharma distributor recognised that pure distribution was becoming commoditised. LadderFrame defined forward integration strategy, led end-to-end identification of target pharmacy stores, conducted due diligence, and managed full acquisition closure — enabling direct brand access.</p>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card">
+      <span class="case-badge active">Active Engagement</span>
+      <div class="case-sector">IT Services · ₹100Cr Revenue · Sales + Partnerships + AI Strategy</div>
+      <h3 class="case-title">Transforming a ₹100Cr IT Services Company</h3>
+      <div class="case-columns">
+        <div>
+          <div class="case-col-title">Sales Org</div>
+          <div class="case-col-item">CRO & Account Directors</div>
+          <div class="case-col-item">Tiering & Rules of Engagement</div>
+          <div class="case-col-item">Inside Sales for new logos</div>
+          <div class="case-col-item">OKR & pipeline visibility</div>
+        </div>
+        <div>
+          <div class="case-col-title">Partnerships</div>
+          <div class="case-col-item">Partner audit & gap analysis</div>
+          <div class="case-col-item">Alliance target mapping</div>
+          <div class="case-col-item">Joint GTM playbook</div>
+          <div class="case-col-item">Co-sell motions design</div>
+        </div>
+        <div>
+          <div class="case-col-title">AI Strategy</div>
+          <div class="case-col-item">AI narrative & positioning</div>
+          <div class="case-col-item">Use case by vertical</div>
+          <div class="case-col-item">Advisory, build & operate</div>
+          <div class="case-col-item">AI revenue proof points</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem">
+  <p class="section-label">The Ecosystem</p>
+  <h2 class="section-title">Integrated Advisory — Built for <em>Full-Scale Impact.</em></h2>
+  <p class="eco-intro">LadderFrame doesn't just advise — we orchestrate. Depending on your engagement, we activate trusted specialist partners, each deeply credentialed in their domain. Together, we deliver a cohesive, end-to-end growth mandate — not disconnected workstreams.</p>
+
+  <div class="eco-layout">
+    <div class="eco-node">
+      <div class="eco-node-title">Talent Acquisition & Leadership Resourcing</div>
+      <p class="eco-node-item">Embedded TA for high-growth mandates</p>
+      <p class="eco-node-item">CxO, mid-management & specialist hiring</p>
+      <p class="eco-node-item">Culture and capability fit assessment</p>
+    </div>
+
+    <div class="eco-center-block">
+      <div class="eco-connector"></div>
+      <div class="eco-hub">
+        <div class="eco-hub-name">LadderFrame</div>
+        <div class="eco-hub-sub">Growth Strategy · Sales Org · AI · Expansion</div>
+      </div>
+      <div class="eco-connector"></div>
+    </div>
+
+    <div class="eco-node">
+      <div class="eco-node-title">AI-Led Operations & Business Automation</div>
+      <p class="eco-node-item">AI readiness assessment & strategy</p>
+      <p class="eco-node-item">Workflow automation & process redesign</p>
+      <p class="eco-node-item">Analytics integration & data visibility</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <p class="section-label">The Team</p>
+  <h2 class="section-title">Practitioners Who Have <em>Lived the Journey.</em></h2>
+
+  <div class="team-card">
+    <div class="team-portrait">
+      <div class="team-initials">AV</div>
+      <div class="team-name-overlay">
+        <div class="name">Anurag Verulkar</div>
+        <div class="role">Partner, LadderFrame Advisors LLP</div>
+      </div>
+    </div>
+
+    <div class="team-bio">
+      <div class="team-stats">
+        <div class="team-stat">
+          <div class="team-stat-val">27+</div>
+          <div class="team-stat-label">Years Experience</div>
+        </div>
+        <div class="team-stat">
+          <div class="team-stat-val">US$2B+</div>
+          <div class="team-stat-label">Customer Lifetime Value</div>
+        </div>
+        <div class="team-stat">
+          <div class="team-stat-val">50+</div>
+          <div class="team-stat-label">Enterprise Deals Led</div>
+        </div>
+        <div class="team-stat">
+          <div class="team-stat-val">US$150B</div>
+          <div class="team-stat-label">Bajaj Group Scale</div>
+        </div>
+      </div>
+
+      <div class="team-points">
+        <div class="team-point">
+          <div class="tp-bullet"></div>
+          <p class="tp-text">27+ years scaling businesses at Cognizant (13 yrs), Ascendion, Movate, NTT across India & APAC</p>
+        </div>
+        <div class="team-point">
+          <div class="tp-bullet"></div>
+          <p class="tp-text">Ex-CBO, Bajaj Technology Services (Bajaj Group | US$150B) — built a new-age IT services firm from inception</p>
+        </div>
+        <div class="team-point">
+          <div class="tp-bullet"></div>
+          <p class="tp-text">Cognizant (13 yrs) — scaled India business US$1M → US$160M+; won Google as Cognizant's largest global account. Set up SMAC service line & Large Deals APAC team.</p>
+        </div>
+        <div class="team-point">
+          <div class="tp-bullet"></div>
+          <p class="tp-text">As a P&L leader delivered 3.8% margin improvement; consistent revenue overachievement. Deep expertise across Financial Services, Insurance, Hi-Tech, Retail, Telecom, Pharma, Manufacturing, GCCs.</p>
+        </div>
+        <div class="team-point">
+          <div class="tp-bullet"></div>
+          <p class="tp-text">Hands-on experience investing in 15+ startups spanning HealthTech, FinTech, and EdTech.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <p class="cta-quote">A ladder without a frame collapses.<br>A frame without a ladder goes <em>nowhere.</em></p>
+  <p class="cta-tagline">LadderFrame brings both — and the ecosystem to make it real. Let's engineer your growth together.</p>
+  <div class="cta-actions">
+    <a href="mailto:connect@ladderframe.in" class="btn-primary">connect@ladderframe.in</a>
+    <a href="http://www.ladderframe.in" class="btn-ghost" target="_blank">www.ladderframe.in</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ladder<span>Frame</span> Advisors LLP</div>
+  <ul class="footer-links">
+    <li><a href="#challenge">Challenge</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#cases">Impact</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+  <div class="footer-copy">Mumbai &nbsp;·&nbsp; © 2025 LadderFrame Advisors LLP</div>
+</footer>
+
+</body>
+</html>
