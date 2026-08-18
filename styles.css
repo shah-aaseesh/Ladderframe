@@ -4160,21 +4160,50 @@ body {
   }
 }
 
-/* 2. NUMBERED DIAGNOSTIC MATRIX (CARD-FREE EDITORIAL TABLE) */
+/* 2. NUMBERED DIAGNOSTIC MATRIX (INFINITE VERTICAL LOOPING STREAM) */
+.diagnostic-matrix-marquee-wrapper {
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid var(--bg-border);
+  border-bottom: 1px solid var(--bg-border);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 1) 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 8%, rgba(0, 0, 0, 1) 92%, transparent 100%);
+}
+
+.diagnostic-marquee-track {
+  display: flex;
+  flex-direction: column;
+  animation: verticalDiagnosticMarquee 26s linear infinite;
+}
+
+.diagnostic-matrix-marquee-wrapper:hover .diagnostic-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes verticalDiagnosticMarquee {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
 .diagnostic-matrix-table {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--bg-border);
 }
 
 .diagnostic-row {
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 2rem;
-  padding: 2.25rem 1rem;
+  padding: 2.25rem 1.25rem;
   border-bottom: 1px solid var(--bg-border);
   transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   position: relative;
+  background-color: var(--bg-white);
 }
 
 .diagnostic-row::before {
@@ -4183,7 +4212,7 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 3.5px;
   background-color: var(--accent-gold);
   opacity: 0;
   transform: scaleY(0.4);
@@ -4191,7 +4220,7 @@ body {
 }
 
 .diagnostic-row:hover {
-  background-color: rgba(128, 0, 32, 0.02);
+  background-color: rgba(128, 0, 32, 0.025);
   transform: translateX(4px);
 }
 
