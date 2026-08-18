@@ -327,7 +327,7 @@ em {
   left: 0;
   width: 28px;
   height: 28px;
-  border: 1.5px solid rgba(154, 107, 50, 0.5);
+  border: 1.5px solid rgba(128, 0, 32, 0.4);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99998;
@@ -344,7 +344,7 @@ em {
   width: 40px;
   height: 40px;
   border-color: var(--accent-gold);
-  background-color: rgba(154, 107, 50, 0.08);
+  background-color: rgba(128, 0, 32, 0.08);
 }
 
 @media (max-width: 991px), (pointer: coarse) {
@@ -360,7 +360,7 @@ em {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(to right, #0f172a, #d97706, #f59e0b);
+  background: linear-gradient(to right, #800020, #a00028, #ffccd5);
   width: 0%;
   z-index: 2000;
   transition: width 0.1s linear;
@@ -532,7 +532,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--accent-gold);
   color: var(--bg-white);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.35);
+  box-shadow: 0 8px 24px rgba(128, 0, 32, 0.35);
 }
 
 .btn-outline {
@@ -1174,7 +1174,7 @@ a:hover .icon-arrow {
 
 .vestox-tab-card:hover {
   box-shadow: 0 16px 40px rgba(18, 20, 23, 0.08);
-  border-color: rgba(154, 107, 50, 0.35);
+  border-color: rgba(128, 0, 32, 0.25);
   transform: translateY(-6px);
 }
 
@@ -1219,8 +1219,8 @@ a:hover .icon-arrow {
 
 .vestox-tab-card:hover .vestox-chart-widget {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 24px rgba(154, 107, 50, 0.12);
-  border-color: rgba(154, 107, 50, 0.25);
+  box-shadow: 0 10px 24px rgba(128, 0, 32, 0.1);
+  border-color: rgba(128, 0, 32, 0.2);
 }
 
 .vestox-chart-stat {
@@ -1933,7 +1933,7 @@ a:hover .icon-arrow {
 
 .iso-step-btn:hover {
   transform: translateY(-4px);
-  border-color: rgba(154, 107, 50, 0.4);
+  border-color: rgba(128, 0, 32, 0.35);
   color: var(--primary);
   background-color: #ffffff;
 }
@@ -1978,7 +1978,7 @@ a:hover .icon-arrow {
 .news-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(217, 119, 6, 0.25);
+  border-color: rgba(128, 0, 32, 0.25);
 }
 
 .news-thumb-wrapper {
@@ -2101,7 +2101,7 @@ a:hover .icon-arrow {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(60deg, transparent, rgba(217, 119, 6, 0.08), transparent);
+  background: linear-gradient(60deg, transparent, rgba(128, 0, 32, 0.08), transparent);
   transform: rotate(30deg) translateX(-100%);
   transition: transform 0.6s ease;
 }
@@ -2307,7 +2307,7 @@ a:hover .icon-arrow {
 .form-control:focus {
   outline: none;
   border-color: var(--accent-gold);
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.18);
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.18);
   transform: translateY(-1px);
 }
 
@@ -2687,7 +2687,7 @@ a:hover .icon-arrow {
 
 .vestox-tab-card-stack:hover {
   box-shadow: 0 24px 60px rgba(18, 20, 23, 0.12);
-  border-color: rgba(154, 107, 50, 0.3);
+  border-color: rgba(128, 0, 32, 0.25);
 }
 
 .pillar-card-1 { z-index: 10; }
@@ -3289,18 +3289,7 @@ body {
 
 /* Badge Pulse Dot */
 .badge-pulse-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-gold);
-  margin-right: 0.4rem;
-  box-shadow: 0 0 6px var(--accent-gold);
-  animation: badgeDotPulse 1.8s infinite;
-}
-@keyframes badgeDotPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
+  display: none !important;
 }
 
 /* --- EXECUTIVE CARD TABS STYLING --- */
