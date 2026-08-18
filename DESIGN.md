@@ -3,32 +3,33 @@ name: LadderFrame Growth Architects
 description: Executive B2B Advisory & Growth Engineering Platform
 colors:
   primary: "#121417"
-  accent-gold: "#800020"
+  accent-maroon: "#800020"
   neutral-bg: "#ffffff"
   bg-light: "#f8fafc"
   bg-cream: "#faf8f5"
-  text-muted: "#475569"
-  bg-border: "#e2e8f0"
+  text-muted: "#525b67"
+  bg-border: "rgba(18, 20, 23, 0.08)"
 typography:
   display:
-    fontFamily: "Cormorant Garamond, Georgia, serif"
-    fontSize: "clamp(3rem, 5.5vw, 4.75rem)"
-    fontWeight: 600
-    lineHeight: "1.06"
+    fontFamily: "Aptos Display, Plus Jakarta Sans, Inter, -apple-system, sans-serif"
+    fontSize: "clamp(2.75rem, 5vw, 4.25rem)"
+    fontWeight: 700
+    lineHeight: "1.08"
   headline:
-    fontFamily: "Cormorant Garamond, Georgia, serif"
-    fontSize: "clamp(2.2rem, 3.8vw, 3.25rem)"
-    fontWeight: 500
-    lineHeight: "1.15"
+    fontFamily: "Aptos Display, Plus Jakarta Sans, Inter, -apple-system, sans-serif"
+    fontSize: "clamp(2.2rem, 3.8vw, 3.2rem)"
+    fontWeight: 700
+    lineHeight: "1.14"
   body:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontFamily: "Aptos, Bierstadt, Plus Jakarta Sans, Inter, Segoe UI, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: "1.65"
 rounded:
   sm: "8px"
-  md: "16px"
-  lg: "24px"
+  md: "12px"
+  lg: "20px"
+  xl: "28px"
   pill: "9999px"
 spacing:
   sm: "12px"
@@ -41,15 +42,15 @@ components:
     textColor: "#ffffff"
     rounded: "{rounded.pill}"
     padding: "0.75rem 1.85rem"
-  button-gold:
-    backgroundColor: "{colors.accent-gold}"
+  button-maroon:
+    backgroundColor: "{colors.accent-maroon}"
     textColor: "#ffffff"
     rounded: "{rounded.pill}"
     padding: "0.75rem 1.85rem"
   card-porcelain:
     backgroundColor: "{colors.neutral-bg}"
-    rounded: "{rounded.md}"
-    padding: "2rem"
+    rounded: "{rounded.lg}"
+    padding: "2.25rem 2rem"
 ---
 
 # Design System: LadderFrame Growth Architects
@@ -58,72 +59,51 @@ components:
 
 **Creative North Star: "The Executive Architectural Sanctuary"**
 
-LadderFrame presents an authoritative, high-taste editorial design system crafted for B2B Enterprise Founders and C-level executives. The aesthetic blends classic publishing typography with crisp modern UI geometry, avoiding tech-startup noise in favor of weight, precision, and confidence.
+LadderFrame presents an authoritative, high-taste editorial design system crafted for B2B Enterprise Founders and C-level executives. The aesthetic combines modern architectural geometry with rich editorial accents, avoiding tech-startup noise in favor of weight, precision, and confidence.
 
 Key Characteristics:
-- Dual-font pairing: Regal serif display headers paired with clean geometric body type.
-- High-contrast porcelain surfaces punctuated by warm Antique Bronze accents.
-- Staggered multi-column motion and 3D architectural visual metaphors.
+- Universal Aptos typography system with refined neo-grotesque fallbacks.
+- High-contrast warm porcelain surfaces (`#FAF8F5`) punctuated by Regal Maroon (`#800020`) accents for all italics and highlights.
+- Staggered multi-column motion, 3D architectural visual metaphors, and integrated partner ecosystem networks.
 
 ## Colors
 
-The palette balances deep dark charcoal, warm porcelain white, and muted antique gold.
+The palette balances deep dark charcoal, warm porcelain white, and regal maroon.
 
 ### Primary
-- **Deep Midnight Navy** (`#121417`): Used for primary headlines, dark-mode highlight sections, footers, and executive buttons.
+- **Deep Midnight Ink** (`#121417`): Used for primary headlines, dark-mode highlight sections, footers, and executive buttons.
 
-### Secondary
-- **Antique Gold** (`#9a6b32`): Used for section overline badges, metric highlights, key action links, and hover state rings.
+### Accent
+- **Regal Maroon** (`#800020`): Used universally for all italic text elements, section overline badges, active indicators, and key action buttons.
 
-### Neutral
+### Neutral Surfaces
 - **Porcelain White** (`#ffffff`): Card surfaces, drawer backdrops, and active stage elements.
-- **Linen Porcelain** (`#f8fafc`): Light background stage canvas.
-- **Warm Cream Ivory** (`#faf8f5`): Interactive process stage backdrops.
-- **Hairline Border** (`#e2e8f0`): Subtle 1px structural grid lines.
+- **Warm Linen Porcelain** (`#faf8f5`): Light background stage canvas and section backgrounds.
+- **Hairline Border** (`rgba(18, 20, 23, 0.08)`): Subtle 1px structural grid lines.
 
 ### Named Rules
-**The Rarity Rule.** The Antique Gold accent is used sparingly on ≤10% of any screen viewport. Its rarity establishes instant visual authority.
+**The Universal Maroon Rule.** All italic typography (`em`, `i`, italic headings, and emphasis spans) is rendered in Regal Maroon (`#800020`) to establish instant visual rhythm and editorial prestige.
 
 ## Typography
 
-**Display Font:** Cormorant Garamond (Georgia, serif)
-**Body Font:** Plus Jakarta Sans (system-ui, sans-serif)
+**Primary Font:** Aptos (with Plus Jakarta Sans, Inter, and system fallbacks)
+**Display Headings:** Aptos Display (bold weight 700 with italic maroon accents)
 
 ### Hierarchy
-- **Display** (Cormorant Garamond 600, clamp 3rem–4.75rem, line-height 1.06): Hero main headline.
-- **Headline** (Cormorant Garamond 500, clamp 2.2rem–3.25rem, line-height 1.15): Section titles.
-- **Title** (Cormorant Garamond 500, 1.4rem–1.8rem): Card titles and bottleneck headers.
-- **Body** (Plus Jakarta Sans 400, 1rem, line-height 1.65): Paragraph copy, descriptions, and ledes.
-- **Label** (Plus Jakarta Sans 700, 0.75rem, uppercase, letter-spacing 0.05em): Overline pills and status tags.
+- **Display** (Aptos Display 700, clamp 2.75rem–4.25rem, line-height 1.08): Hero main headline.
+- **Headline** (Aptos Display 700, clamp 2.2rem–3.2rem, line-height 1.14): Section titles.
+- **Title** (Aptos Display 700, 1.35rem–1.55rem): Card titles and bottleneck headers.
+- **Body** (Aptos 400, 1rem, line-height 1.65): Paragraph copy, descriptions, and ledes.
+- **Label** (Aptos 700, 0.75rem, uppercase, letter-spacing 0.1em): Overline pills and status tags.
 
 ## Layout
 
-Standardized container width (1200px max-width) with uniform 4.5rem top/bottom section vertical padding. Interactive sections use a 2-halved split screen grid (`360px 1fr`) with sticky left headers.
+Standardized container width (1280px max-width) with uniform 5.5rem–6.5rem top/bottom section vertical padding.
 
 ## Elevation & Depth
 
-Surfaces rely on subtle hairline borders (`1px solid rgba(18, 20, 23, 0.07)`) and soft ambient drop shadows (`box-shadow: 0 12px 36px rgba(18, 20, 23, 0.05)`). Hover states elevate elements by `-5px` with gold shadow glows.
+Surfaces rely on subtle hairline borders (`1px solid rgba(18, 20, 23, 0.08)`) and soft ambient drop shadows (`box-shadow: 0 4px 20px rgba(18, 20, 23, 0.04)`). Hover states elevate elements by `-6px` to `-8px` with refined elevation shadows.
 
 ## Shapes
 
-Card containers use uniform 16px corner radiuses (`var(--radius-lg)`). Interactive buttons and overline badges use full pill geometry (`var(--radius-pill)`).
-
-## Components
-
-### Buttons
-- **Shape:** Full pill radius (`border-radius: 9999px`)
-- **Primary:** Deep Midnight Navy background (`#121417`), white text, `padding: 0.75rem 1.85rem`.
-- **Gold CTA:** Antique Gold background (`#9a6b32`), white text.
-
-### Cards
-- **Porcelain Executive Card:** `#ffffff` surface, 1px hairline border, 16px radius, `padding: 2rem`, shadow elevation.
-
-## Do's and Don'ts
-
-### Do:
-- **Do** maintain strict font separation: Cormorant Garamond for titles & numbers; Plus Jakarta Sans for body prose.
-- **Do** preserve 2-column staggered layout physics for bottleneck marquee cards.
-
-### Don't:
-- **Don't** use bright neon colors or generic blue accents.
-- **Don't** clutter section headers with unneeded extra card boxes.
+Card containers use uniform 20px corner radiuses (`var(--radius-lg)`). Interactive buttons and overline badges use full pill geometry (`var(--radius-pill)`).

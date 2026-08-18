@@ -1,88 +1,93 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-18T00:04:52Z",
+  "generatedAt": "2026-08-18T16:45:00Z",
   "title": "Design System: LadderFrame Growth Architects",
   "extensions": {
     "colorMeta": {
       "primary": {
         "role": "primary",
-        "displayName": "Deep Midnight Navy",
+        "displayName": "Deep Midnight Ink",
         "canonical": "#121417"
       },
       "accent-gold": {
-        "role": "secondary",
-        "displayName": "Deep Regal Maroon",
+        "role": "accent",
+        "displayName": "Regal Maroon",
         "canonical": "#800020"
       },
       "neutral-bg": {
         "role": "neutral",
         "displayName": "Porcelain White",
         "canonical": "#ffffff"
+      },
+      "bg-cream": {
+        "role": "surface",
+        "displayName": "Warm Linen Porcelain",
+        "canonical": "#faf8f5"
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Cormorant Garamond Display",
-        "purpose": "Executive main headlines and display numbers."
+        "displayName": "Aptos Display",
+        "purpose": "Executive section headlines and display titles."
       },
       "body": {
-        "displayName": "Plus Jakarta Sans Body",
+        "displayName": "Aptos",
         "purpose": "Readable body prose and micro UI."
       }
     },
     "shadows": [
       {
         "name": "ambient-low",
-        "value": "0 12px 36px rgba(18, 20, 23, 0.05)",
+        "value": "0 4px 20px rgba(18, 20, 23, 0.04)",
         "purpose": "Soft porcelain card elevation."
       },
       {
-        "name": "gold-glow",
-        "value": "0 8px 24px rgba(154, 107, 50, 0.3)",
+        "name": "elevation-hover",
+        "value": "0 16px 40px rgba(18, 20, 23, 0.09)",
         "purpose": "Interactive hover state elevation."
       }
     ]
   },
   "components": [
     {
-      "name": "Executive Gold Button",
+      "name": "Executive Maroon Button",
       "kind": "button",
       "refersTo": "button-gold",
       "description": "Primary call-to-action button for executive conversions.",
-      "html": "<button class=\"ds-btn-gold\">Get in Touch →</button>",
-      "css": ".ds-btn-gold { background: #9a6b32; color: #ffffff; padding: 0.75rem 1.85rem; border-radius: 9999px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(154, 107, 50, 0.25); } .ds-btn-gold:hover { background: #7e5627; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(154, 107, 50, 0.4); }"
+      "html": "<button class=\"btn btn-gold\">Start Conversation →</button>",
+      "css": ".btn-gold { background: #800020; color: #ffffff; padding: 0.75rem 1.85rem; border-radius: 9999px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(128, 0, 32, 0.25); } .btn-gold:hover { background: #991b1b; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(128, 0, 32, 0.4); }"
     },
     {
       "name": "Porcelain Card",
       "kind": "card",
       "refersTo": "card-porcelain",
       "description": "Porcelain surface card for executive case studies & practice areas.",
-      "html": "<div class=\"ds-card-porcelain\"><h3>Strategic Growth</h3><p>Predictable sales pipeline and unit economics audit.</p></div>",
-      "css": ".ds-card-porcelain { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; box-shadow: 0 12px 36px rgba(18, 20, 23, 0.05); transition: all 0.3s ease; } .ds-card-porcelain:hover { border-color: rgba(154, 107, 50, 0.35); transform: translateY(-5px); }"
+      "html": "<div class=\"solution-card\"><h3>Strategic Growth</h3><p>Predictable sales pipeline and unit economics audit.</p></div>",
+      "css": ".solution-card { background: #ffffff; border: 1px solid rgba(18, 20, 23, 0.08); border-radius: 20px; padding: 2.25rem 2rem; box-shadow: 0 4px 20px rgba(18, 20, 23, 0.04); transition: all 0.3s ease; } .solution-card:hover { border-color: rgba(128, 0, 32, 0.35); transform: translateY(-5px); }"
     }
   ],
   "narrative": {
     "northStar": "The Executive Architectural Sanctuary",
     "overview": "LadderFrame presents an authoritative, high-taste editorial design system crafted for B2B Enterprise Founders and C-level executives.",
     "keyCharacteristics": [
-      "Dual-font pairing: Cormorant Garamond serif display headers paired with Plus Jakarta Sans body type.",
-      "Porcelain White (#ffffff) card surfaces with hairline borders and ambient drop shadows.",
-      "Sparse Antique Gold (#9a6b32) accents for high-contrast visual authority."
+      "Universal Aptos typography with Aptos Display headlines and Aptos Sans body prose.",
+      "Porcelain White (#ffffff) and Warm Linen (#faf8f5) surfaces with hairline borders and refined physical elevation.",
+      "Universal Regal Maroon (#800020) accents for all italics and key action highlights."
     ],
     "rules": [
       {
-        "name": "The Rarity Rule",
-        "body": "The Antique Gold accent is used sparingly on ≤10% of any screen viewport.",
-        "section": "colors"
+        "name": "The Universal Maroon Rule",
+        "body": "All italic typography (em, i, and italic emphasis spans) is rendered in Regal Maroon (#800020) to establish instant visual rhythm and editorial prestige.",
+        "section": "typography"
       }
     ],
     "dos": [
-      "Do maintain strict font separation: Cormorant Garamond for titles & numbers; Plus Jakarta Sans for body prose.",
-      "Do preserve 2-column staggered layout physics for bottleneck marquee cards."
+      "Do maintain strict Aptos typography with Aptos Display for headings and Aptos for body prose.",
+      "Do use uniform 20px radius for cards and 9999px pill radius for buttons and badges."
     ],
     "donts": [
-      "Don't use bright neon colors or generic blue accents.",
-      "Don't clutter section headers with unneeded extra card boxes."
+      "Don't use low-contrast maroon text on dark surfaces.",
+      "Don't use artificial colored glow halos on dark containers."
     ]
   }
 }

@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initServicesPinnedMorphStage();
   initStatsCounterAnimation();
   initBottlenecksAnimation();
+  initEcosystemOrchestrationAnimation();
+  initManifestoScrollReveal();
+  initDualityScrollReveal();
 });
 
 /* Luxury Custom Cursor Engine */
@@ -503,6 +506,7 @@ function initServicesPinnedMorphStage() {
     diamond: "M 200,30 C 280,115 360,200 360,200 C 280,285 200,370 200,370 C 120,285 40,200 40,200 C 120,115 200,30 200,30 Z"
   };
 
+  const shapeList = [shapes.rect, shapes.cube, shapes.circle, shapes.diamond];
   const tabBtns = document.querySelectorAll('.services-tab-btn');
   const morphTarget = document.getElementById('serv-morph-path');
   const slidesCount = 4;
@@ -514,43 +518,34 @@ function initServicesPinnedMorphStage() {
     document.getElementById('serv-slide-3')
   ];
 
+  const illuLayers = [
+    document.getElementById('serv-illu-0'),
+    document.getElementById('serv-illu-1'),
+    document.getElementById('serv-illu-2'),
+    document.getElementById('serv-illu-3')
+  ];
+
+  let currentStep = 0;
+
   function updateActiveState(step) {
+    if (step < 0 || step >= slidesCount) return;
+    currentStep = step;
+
+    // Update Tab Buttons
     tabBtns.forEach((btn, idx) => {
-      const numDiv = btn.querySelector('div:nth-child(1)');
-      const titleDiv = btn.querySelector('div:nth-child(2)');
-      const descDiv = btn.querySelector('div:nth-child(3)');
-      if (idx === step) {
-        btn.classList.add('active');
-        btn.style.background = 'rgba(128, 0, 32, 0.03)';
-        btn.style.color = '#800020';
-        btn.style.borderLeft = '3px solid #800020';
-        if (numDiv) {
-          numDiv.style.color = 'var(--accent-gold)';
-          numDiv.style.opacity = '1';
-        }
-        if (titleDiv) titleDiv.style.fontWeight = '700';
-        if (descDiv) descDiv.style.opacity = '0.85';
-      } else {
-        btn.classList.remove('active');
-        btn.style.background = 'transparent';
-        btn.style.color = 'var(--text-muted)';
-        btn.style.borderLeft = '3px solid transparent';
-        if (numDiv) {
-          numDiv.style.color = 'var(--text-muted)';
-          numDiv.style.opacity = '0.5';
-        }
-        if (titleDiv) titleDiv.style.fontWeight = '600';
-        if (descDiv) descDiv.style.opacity = '0.6';
-      }
+      btn.classList.toggle('active', idx === step);
     });
 
+    // Update Right Content Slides
     contentSlides.forEach((slide, idx) => {
       if (slide) {
         if (idx === step) {
           slide.style.opacity = '1';
+          slide.style.transform = 'translateY(0)';
           slide.style.pointerEvents = 'auto';
         } else {
           slide.style.opacity = '0';
+          slide.style.transform = idx < step ? 'translateY(-15px)' : 'translateY(15px)';
           slide.style.pointerEvents = 'none';
         }
       }
@@ -574,38 +569,299 @@ function initServicesPinnedMorphStage() {
     });
 
     // INITIAL STATE
-    gsap.set('#serv-slide-0, #serv-illu-0', { opacity: 1, y: 0 });
+    gsap.set('#serv-slide-0, #serv-illu-0', { opacity: 1, y: 0, scale: 1 });
     gsap.set('.serv-morph-svg-container', { transformOrigin: 'center center' });
 
     // SLIDE 0 -> SLIDE 1
-    tl.to('#serv-illu-0', { opacity: 0, y: -40, scale: 0.88, filter: 'blur(4px)', duration: 1, ease: 'power3.inOut' }, 0)
+    tl.to('#serv-illu-0', { opacity: 0, y: -30, scale: 0.9, duration: 1, ease: 'power2.inOut' }, 0)
       .to(morphTarget, { attr: { d: shapes.cube }, duration: 1.6, ease: 'power2.inOut' }, 0)
-      .to('.serv-morph-svg-container', { scale: 1.08, duration: 0.8, ease: 'power2.out' }, 0)
+      .to('.serv-morph-svg-container', { scale: 1.06, duration: 0.8, ease: 'power2.out' }, 0)
       .to('.serv-morph-svg-container', { scale: 1, duration: 0.8, ease: 'power2.in' }, 0.8)
-      .fromTo('#serv-illu-1', { opacity: 0, y: 40, scale: 1.08, filter: 'blur(4px)' }, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1.1, ease: 'power3.out' }, 0.6);
+      .fromTo('#serv-illu-1', { opacity: 0, y: 30, scale: 1.08 }, { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: 'power3.out' }, 0.6);
 
     // SLIDE 1 -> SLIDE 2
-    tl.to('#serv-illu-1', { opacity: 0, y: -40, scale: 0.88, filter: 'blur(4px)', duration: 1, ease: 'power3.inOut' }, 2)
+    tl.to('#serv-illu-1', { opacity: 0, y: -30, scale: 0.9, duration: 1, ease: 'power2.inOut' }, 2)
       .to(morphTarget, { attr: { d: shapes.circle }, duration: 1.6, ease: 'power2.inOut' }, 2)
-      .to('.serv-morph-svg-container', { scale: 1.08, duration: 0.8, ease: 'power2.out' }, 2)
+      .to('.serv-morph-svg-container', { scale: 1.06, duration: 0.8, ease: 'power2.out' }, 2)
       .to('.serv-morph-svg-container', { scale: 1, duration: 0.8, ease: 'power2.in' }, 2.8)
-      .fromTo('#serv-illu-2', { opacity: 0, y: 40, scale: 1.08, filter: 'blur(4px)' }, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1.1, ease: 'power3.out' }, 2.6);
+      .fromTo('#serv-illu-2', { opacity: 0, y: 30, scale: 1.08 }, { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: 'power3.out' }, 2.6);
 
     // SLIDE 2 -> SLIDE 3
-    tl.to('#serv-illu-2', { opacity: 0, y: -40, scale: 0.88, filter: 'blur(4px)', duration: 1, ease: 'power3.inOut' }, 4)
+    tl.to('#serv-illu-2', { opacity: 0, y: -30, scale: 0.9, duration: 1, ease: 'power2.inOut' }, 4)
       .to(morphTarget, { attr: { d: shapes.diamond }, duration: 1.6, ease: 'power2.inOut' }, 4)
-      .to('.serv-morph-svg-container', { scale: 1.08, duration: 0.8, ease: 'power2.out' }, 4)
+      .to('.serv-morph-svg-container', { scale: 1.06, duration: 0.8, ease: 'power2.out' }, 4)
       .to('.serv-morph-svg-container', { scale: 1, duration: 0.8, ease: 'power2.in' }, 4.8)
-      .fromTo('#serv-illu-3', { opacity: 0, y: 40, scale: 1.08, filter: 'blur(4px)' }, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 1.1, ease: 'power3.out' }, 4.6);
+      .fromTo('#serv-illu-3', { opacity: 0, y: 30, scale: 1.08 }, { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: 'power3.out' }, 4.6);
 
-    // Tab Click Handlers
+    // Interactive Tab Click Engine (Smooth Scroll & Direct SVG Morph)
     tabBtns.forEach((btn, idx) => {
       btn.addEventListener('click', () => {
-        const totalScroll = document.getElementById('services-scroll-wrapper').offsetHeight - window.innerHeight;
+        updateActiveState(idx);
+        
+        // Direct SVG Animation Switch
+        illuLayers.forEach((layer, lIdx) => {
+          if (lIdx === idx) {
+            gsap.to(layer, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'power2.out' });
+          } else {
+            gsap.to(layer, { opacity: 0, y: lIdx < idx ? -20 : 20, scale: 0.92, duration: 0.4, ease: 'power2.in' });
+          }
+        });
+
+        if (morphTarget && shapeList[idx]) {
+          gsap.to(morphTarget, { attr: { d: shapeList[idx] }, duration: 0.9, ease: 'power2.inOut' });
+          gsap.fromTo('.serv-morph-svg-container', { scale: 0.96 }, { scale: 1, duration: 0.6, ease: 'back.out(1.4)' });
+        }
+
+        const totalScroll = scrollWrapper.offsetHeight - window.innerHeight;
         const target = (idx / (slidesCount - 1)) * totalScroll;
-        const wrapperTop = document.getElementById('services-scroll-wrapper').offsetTop;
+        const wrapperTop = scrollWrapper.offsetTop;
         window.scrollTo({ top: wrapperTop + target, behavior: 'smooth' });
       });
     });
   }
 }
+
+/* ----------------------------------------------------
+   THE ECOSYSTEM — GSAP SCROLL & INTERACTIVE ORCHESTRATION
+   ---------------------------------------------------- */
+function initEcosystemOrchestrationAnimation() {
+  const ecoSection = document.getElementById('ecosystem');
+  const cardLeft = document.getElementById('eco-card-left');
+  const cardRight = document.getElementById('eco-card-right');
+  const cardCenter = document.getElementById('eco-card-center');
+  const svgNetwork = document.querySelector('.ecosystem-svg-network');
+  const valueItems = document.querySelectorAll('.ecosystem-value-item');
+
+  if (!ecoSection) return;
+
+  // Guarantee cards are immediately visible in DOM
+  [cardLeft, cardRight, cardCenter].forEach(c => {
+    if (c) {
+      c.style.opacity = '1';
+      c.style.visibility = 'visible';
+    }
+  });
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    // Safe entrance animation that starts from current visible state
+    gsap.fromTo(cardCenter, 
+      { scale: 0.92, y: 20 },
+      { 
+        scale: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: 'back.out(1.5)',
+        scrollTrigger: {
+          trigger: '#ecosystem',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    gsap.fromTo(cardLeft,
+      { x: -30 },
+      {
+        x: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#ecosystem',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    gsap.fromTo(cardRight,
+      { x: 30 },
+      {
+        x: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#ecosystem',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  }
+
+  // Interactive Hover Signal Acceleration
+  const signalPaths = document.querySelectorAll('.eco-signal-path, .eco-signal-path-fast');
+  
+  if (cardLeft) {
+    cardLeft.addEventListener('mouseenter', () => {
+      signalPaths.forEach(p => p.style.animationDuration = '0.6s');
+      if (cardCenter) cardCenter.style.borderColor = 'rgba(128, 0, 32, 0.9)';
+    });
+    cardLeft.addEventListener('mouseleave', () => {
+      signalPaths.forEach(p => p.style.animationDuration = '');
+      if (cardCenter) cardCenter.style.borderColor = '';
+    });
+  }
+
+  if (cardRight) {
+    cardRight.addEventListener('mouseenter', () => {
+      signalPaths.forEach(p => p.style.animationDuration = '0.6s');
+      if (cardCenter) cardCenter.style.borderColor = 'rgba(128, 0, 32, 0.9)';
+    });
+    cardRight.addEventListener('mouseleave', () => {
+      signalPaths.forEach(p => p.style.animationDuration = '');
+      if (cardCenter) cardCenter.style.borderColor = '';
+    });
+  }
+
+  if (cardCenter) {
+    cardCenter.addEventListener('mouseenter', () => {
+      signalPaths.forEach(p => p.style.animationDuration = '0.4s');
+    });
+    cardCenter.addEventListener('mouseleave', () => {
+      signalPaths.forEach(p => p.style.animationDuration = '');
+    });
+  }
+}
+
+/* ----------------------------------------------------
+   EDITORIAL MANIFESTO — WORD-BY-WORD SCROLL SCRUB REVEAL
+   ---------------------------------------------------- */
+function initManifestoScrollReveal() {
+  const section = document.querySelector('#manifesto');
+  const words = document.querySelectorAll('.manifesto-word');
+  const author = document.querySelector('.manifesto-author-wrapper');
+  const quoteMark = document.querySelector('.manifesto-quote-mark');
+
+  if (!section || !words.length) return;
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const manifestoTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#manifesto',
+        start: 'top 75%',
+        end: 'bottom 45%',
+        scrub: 0.7,
+      }
+    });
+
+    if (quoteMark) {
+      manifestoTl.fromTo(quoteMark, 
+        { opacity: 0.1, scale: 0.8 },
+        { opacity: 0.35, scale: 1, duration: 0.5, ease: 'power1.out' }
+      );
+    }
+
+    words.forEach((word, idx) => {
+      manifestoTl.fromTo(word,
+        { opacity: 0.15, y: 8, filter: 'blur(3px)' },
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 0.8,
+          ease: 'power2.out'
+        },
+        idx * 0.45
+      );
+    });
+
+    if (author) {
+      manifestoTl.fromTo(author,
+        { opacity: 0.1, y: 12 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out'
+        },
+        words.length * 0.45 + 0.1
+      );
+    }
+  } else {
+    // Fallback IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          words.forEach((w, i) => {
+            setTimeout(() => {
+              w.style.opacity = '1';
+              w.style.transform = 'translateY(0)';
+              w.style.filter = 'blur(0px)';
+            }, i * 160);
+          });
+          if (author) {
+            setTimeout(() => {
+              author.style.opacity = '1';
+              author.style.transform = 'translateY(0)';
+            }, words.length * 160 + 200);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    observer.observe(section);
+  }
+}
+
+/* ----------------------------------------------------
+   PHILOSOPHY DUALITY — WORD-BY-WORD SCROLL SCRUB REVEAL
+   ---------------------------------------------------- */
+function initDualityScrollReveal() {
+  const section = document.querySelector('#philosophy-duality');
+  const words = document.querySelectorAll('.duality-word');
+  const badge = document.querySelector('#philosophy-duality .top-banner-badge');
+
+  if (!section || !words.length) return;
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const dualityTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#philosophy-duality',
+        start: 'top 75%',
+        end: 'bottom 45%',
+        scrub: 0.7,
+      }
+    });
+
+    if (badge) {
+      dualityTl.fromTo(badge,
+        { opacity: 0.2, y: 8 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power1.out' }
+      );
+    }
+
+    words.forEach((word, idx) => {
+      dualityTl.fromTo(word,
+        { opacity: 0.16, y: 8, filter: 'blur(3px)' },
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 0.8,
+          ease: 'power2.out'
+        },
+        idx * 0.35 + 0.1
+      );
+    });
+  } else {
+    // Fallback IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          words.forEach((w, i) => {
+            setTimeout(() => {
+              w.style.opacity = '1';
+              w.style.transform = 'translateY(0)';
+              w.style.filter = 'blur(0px)';
+            }, i * 140);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    observer.observe(section);
+  }
+}
+
+
+
